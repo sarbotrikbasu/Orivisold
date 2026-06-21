@@ -328,10 +328,12 @@ def _calc_fib(symbol, timeframe):
         ):
             sig[fn] = 1
 
+    trade_dir = "Potential Downside" if direction == "Uptrend" else "Potential Upside"
     return sig, {
         "TrendStart": str(df.loc[si, "time"]),
         "TrendEnd": str(df.loc[mi, "time"]),
         "TrendDirection": direction,
+        "trade_direction": trade_dir,
     }
 
 
