@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 import time
 
-from config import COMBINED_API_URL
+from configold import COMBINED_API_URL
 
 # ==============================================================
 # CONFIG
