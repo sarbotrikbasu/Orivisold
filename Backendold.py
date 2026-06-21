@@ -645,7 +645,7 @@ def _ma_signal(s21, prev_s21, sma_x):
             return 1
 
         if diff < 0 and s21 < prev_s21:
-            return 1
+            return -1
 
     return "NA"
 
