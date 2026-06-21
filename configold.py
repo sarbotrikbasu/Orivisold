@@ -1,8 +1,8 @@
 import os
 from pathlib import Path
 
-# Load a simple .env file without external dependencies
-def load_env_file(path=".env"):
+# Load a simple .envold file without external dependencies
+def load_env_file(path=".envold"):
     env_path = Path(path)
     if not env_path.exists():
         return
