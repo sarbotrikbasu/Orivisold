@@ -106,6 +106,13 @@ def tab_fib_gen():
     if not table:
         st.info("Engine warming up…"); return
     df = pd.DataFrame(table)
+    rename_dict = {}
+    if "TrendDirection" in df.columns:
+        rename_dict["TrendDirection"] = "Trend Direction"
+    if "trade_direction" in df.columns:
+        rename_dict["trade_direction"] = "Trade Direction"
+    if rename_dict:
+        df = df.rename(columns=rename_dict)
     cols = ["Symbol", "Timeframe"] + [c for c in df.columns if c not in ("Symbol", "Timeframe")]
     st.dataframe(df[cols], use_container_width=True, hide_index=True)
 
@@ -124,6 +131,13 @@ def tab_fib_jpy():
     if not table:
         st.info("Engine warming up…"); return
     df = pd.DataFrame(table)
+    rename_dict = {}
+    if "TrendDirection" in df.columns:
+        rename_dict["TrendDirection"] = "Trend Direction"
+    if "trade_direction" in df.columns:
+        rename_dict["trade_direction"] = "Trade Direction"
+    if rename_dict:
+        df = df.rename(columns=rename_dict)
     cols = ["Symbol", "Timeframe"] + [c for c in df.columns if c not in ("Symbol", "Timeframe")]
     st.dataframe(df[cols], use_container_width=True, hide_index=True)
 
